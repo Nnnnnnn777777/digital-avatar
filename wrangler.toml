@@ -1,0 +1,9 @@
+name = "digital-avatar"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# 让 index.html 能作为字符串被 import
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = true

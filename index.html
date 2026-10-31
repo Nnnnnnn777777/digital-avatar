@@ -606,9 +606,10 @@
   // ⚠️ Cloudflare Pages 项目名建议用 digital-avatar，网址就是 https://digital-avatar.pages.dev
   const BACKEND_URL = 'https://digital-avatar.pages.dev';
 
-  // 本地、隧道、pages.dev 自身都走同源；只有 GitHub Pages 需要跨域请求 pages.dev
+  // 本地、隧道、pages.dev、workers.dev 自身都走同源；只有 GitHub Pages 需要跨域
   const SAME_ORIGIN = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    || location.hostname.endsWith('trycloudflare.com') || location.hostname.endsWith('pages.dev');
+    || location.hostname.endsWith('trycloudflare.com') || location.hostname.endsWith('pages.dev')
+    || location.hostname.endsWith('workers.dev');
   const API_BASE = SAME_ORIGIN ? '' : BACKEND_URL;
 
   async function handleSend(text){
