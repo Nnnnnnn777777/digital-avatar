@@ -603,8 +603,8 @@
   // 多轮对话上下文（发给后端，由大模型生成回复）
   const history = [];
 
-  // ⚠️ Cloudflare Pages 项目名建议用 digital-avatar，网址就是 https://digital-avatar.pages.dev
-  const BACKEND_URL = 'https://digital-avatar.pages.dev';
+  // Cloudflare Worker 后端（页面托管在 GitHub Pages 时，聊天请求发到这里）
+  const BACKEND_URL = 'https://digital-avatar.1599989594.workers.dev';
 
   // 本地、隧道、pages.dev、workers.dev 自身都走同源；只有 GitHub Pages 需要跨域
   const SAME_ORIGIN = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
